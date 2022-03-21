@@ -40,3 +40,12 @@ test {
     // Use junit platform for unit tests
     useJUnitPlatform()
 }
+
+distributions {
+    main {
+        contents {
+            from 'README.md'
+        }
+    }
+}
+
