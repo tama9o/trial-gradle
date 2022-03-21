@@ -1,16 +1,20 @@
+# プロジェクトの初期化
 gradle init
 ll
 vim .gitattributes 
 vim .gitignore 
+# git repository 設定
 git init
 git status
 git branch
+# github へ push
 git remote add origin git@github.com:tama9o/trial-gradle
 git status
 git add ./
 git status
 git commit
 git push
+# 試しにビルドしてみる
 ./gradlew build
 ll
 git diff
@@ -24,6 +28,7 @@ git diff --cached
 git commit
 vim build.gradle 
 ll .git
+# 出来上がっているファイルをなんとなく確認
 git status
 ll src/
 ll
@@ -33,6 +38,7 @@ find .
 find src/
 vim src/main/java/jp/tama9o/trial/gradle/App.java
 vim src/test/java/jp/tama9o/trial/gradle/AppTest.java
+# テストを流してみてレポート確認
 ./gradlew check
 ll build/reports/tests/test/index.html 
 git status
@@ -40,5 +46,56 @@ git log
 git commit
 git push
 ll
+# コマンド履歴を保存してみる
 mkdir note
 history >note/history.txt
+vim note/history.txt 
+git add note/history.txt 
+git status
+git commit
+git push
+# git のユーザ変え忘れていたので設定
+git config user.name tama9o
+git config user.email tama9o@hotmail.com
+vim .git/config 
+# コミットログの author 書き換え
+# feature ブランチ
+git log
+git rebase -i ce9a2a772c932548ef11c60b45fbbf4a1ccaf0fe
+git rebase -i ce9a2a772c932548ef11c60b45fbbf4a1ccaf0fe~
+git status
+git commit --amend --author="tama9o <tama9o@hotmail.com>"
+git log
+git rebase --continue
+git commit --amend --author="tama9o <tama9o@hotmail.com>"
+git rebase --continue
+git commit --amend --author="tama9o <tama9o@hotmail.com>"
+git rebase --continue
+git log
+# master ブランチ
+git switch master
+git log
+git commit --amend --author="tama9o <tama9o@hotmail.com>"
+git log
+git push -f
+# develop ブランチ
+git switch develop
+git rebase origin/develop
+git log
+git rebase origin/master
+git log
+git push -f
+# develop の書き換えたコミット取り込み
+git switch feature/add-distribution-plugin 
+git rebase origin/develop
+git log
+git push -f
+git log
+history | tail -n 50
+history | tail -n 39
+history | tail -n 44 >note/history.txt 
+vim note/history.txt 
+git status
+git restore note/history.txt
+history | tail -n 50>>note/history.txt 
+history | tail -n 50 >>note/history.txt 
