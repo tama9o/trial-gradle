@@ -1,0 +1,44 @@
+gradle init
+ll
+vim .gitattributes 
+vim .gitignore 
+git init
+git status
+git branch
+git remote add origin git@github.com:tama9o/trial-gradle
+git status
+git add ./
+git status
+git commit
+git push
+./gradlew build
+ll
+git diff
+vim build.gradle 
+vim build/distributions/trial-gradle.zip 
+git status
+git commit
+git add build.gradle 
+git status
+git diff --cached
+git commit
+vim build.gradle 
+ll .git
+git status
+ll src/
+ll
+ll src/test/
+ll src/test/java/
+find .
+find src/
+vim src/main/java/jp/tama9o/trial/gradle/App.java
+vim src/test/java/jp/tama9o/trial/gradle/AppTest.java
+./gradlew check
+ll build/reports/tests/test/index.html 
+git status
+git log
+git commit
+git push
+ll
+mkdir note
+history >note/history.txt
