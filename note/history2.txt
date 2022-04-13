@@ -1,0 +1,19 @@
+# 6.6.1
+./gradlew --version
+./gradlew --help
+git status
+gradle --help
+# Upgrade wrapper to 7.4.2 from 6.6.1
+gradle wrapper
+git status
+git diff gradlew
+./gradlew --version
+git status
+git diff gradle/wrapper/gradle-wrapper.properties
+./gradlew run
+git status
+history >note/history2.txt
+git add .
+git status
+git flow feature start upgrade_gradle
+history | tail -n 5 >>note/history2.txt 
