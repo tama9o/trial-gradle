@@ -17,3 +17,8 @@ git add .
 git status
 git flow feature start upgrade_gradle
 history | tail -n 5 >>note/history2.txt 
+git flow -h
+git flow feature -h
+git flow feature finish 
+git branch -a
+history | tail -5 >>note/history2.txt 
